@@ -4,5 +4,5 @@ It's an open-source, crowdsourced software for catastrophe reporting where local
 ---
 
 ## Credit
-[HB Singh Choudhary](https://github.com/hbsinghchoudhary)
-[Devguru Pandey](https://github.com/DevguruPandey)
+- [HB Singh Choudhary](https://github.com/hbsinghchoudhary)
+- [Devguru Pandey](https://github.com/DevguruPandey)
