@@ -1,5 +1,8 @@
 # Rescue Relay
-It's an open-source, crowdsourced software for catastrophe reporting where local residents can share information when emergency services publish disasters. Following analysis of data, our app will advise the departments on the best course of action.
+- It's an open-source, crowdsourced software for catastrophe reporting where local residents can share information when emergency services publish disasters. Following analysis of data, our app will advise the departments on the best course of action.
+
+## How to see UI sheet
+- You can see UI sheet by opening `RescueRelayUI.excalidraw` on [Excalidraw](https://excalidraw.com) website.
 
 ---
 
@@ -24,6 +27,12 @@ It's an open-source, crowdsourced software for catastrophe reporting where local
 	- [x] Appbar
 	- [x] Side menu slider
 	- [x] Menu list
+- [ ] Home page
+	- [ ] Distance title
+	- [ ] Card with mini address
+	- [ ] Description for the card
+	- [ ] Chat button
+	- [ ] Map button
 
 ---
 
