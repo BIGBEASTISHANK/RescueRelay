@@ -19,10 +19,17 @@ It's an open-source, crowdsourced software for catastrophe reporting where local
 - [ ] GPS access to give notification if disaster occur within 5km
 - [ ] AI analyse the dumped information and then tell different E.S Department their next move
 
+#### Components
+- [x] Header 
+	- [x] Appbar
+	- [x] Side menu slider
+	- [x] Menu list
+
 ---
 
 ## Credit
-- [HB Singh Choudhary](https://github.com/hbsinghchoudhary)
-- [Devguru Pandey](https://github.com/DevguruPandey)
-- [Harsh Gandash](https://github.com/HarshGandash)
-- [Samichha Singh](https://github.com/Samichha13)
+### Old Team
+[HB Singh Choudhary](https://github.com/hbsinghchoudhary) [Angad Singh]("https://github.com/RealAngadSingh")
+
+### New Team
+[Devguru Pandey](https://github.com/DevguruPandey) [Harsh Gandash](https://github.com/HarshGandash) [Samichha Singh](https://github.com/Samichha13) [Mahak Dewangan](https://github.com/MahakDewangan)

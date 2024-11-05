@@ -9,21 +9,28 @@ class SideBar extends StatelessWidget {
         child: ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-        // Drawer heading
-        Container(
-          color: Colors.blue,
-          child: const Padding(
-            padding: EdgeInsets.only(top: 30, left: 15, bottom: 13),
-            child: Text(
-              "Rescue Relay",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 26,
-                fontWeight: FontWeight.w500
-              ),
-            ),
-          ),
-        ),
+        const DrawerHeader(
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.only(left: 15),
+            decoration: BoxDecoration(
+                color: Colors.lightBlue,
+                image: DecorationImage(
+                  image: AssetImage("assets/img/blurDisaster.jpg"),
+                  fit: BoxFit.fill,
+                )),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Spacer(),
+                Text(
+                  "Rescue Relay",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+              ],
+            )),
 
         // Divider
         const Divider(
