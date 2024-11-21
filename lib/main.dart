@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rescuerelay/components/Sidebar.dart';
+import 'package:rescuerelay/components/VolunteerPanel/VolunteerHome.dart';
+import 'package:rescuerelay/data/data.dart';
+import 'package:rescuerelay/components/Common/Sidebar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,6 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
+  // Variables
+  accountTypes accountType = accountTypes.volunteer;
+    
+    // Main part
     return MaterialApp(
         home: Scaffold(
       // Appbar
@@ -37,6 +44,7 @@ class MyApp extends StatelessWidget {
 
       // Drawer
       drawer: const SideBar(),
+      body: accountType == accountTypes.hosts ? const Placeholder() : const VolunteerHome(),
     ));
   }
 }

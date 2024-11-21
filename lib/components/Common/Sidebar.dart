@@ -9,6 +9,7 @@ class SideBar extends StatelessWidget {
         child: ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
+        // Header Background
         const DrawerHeader(
             margin: EdgeInsets.zero,
             padding: EdgeInsets.only(left: 15),
@@ -18,6 +19,7 @@ class SideBar extends StatelessWidget {
                   image: AssetImage("assets/img/blurDisaster.jpg"),
                   fit: BoxFit.fill,
                 )),
+            // Title of the app
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

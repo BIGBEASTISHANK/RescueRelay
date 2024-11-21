@@ -31,8 +31,16 @@
 	- [ ] Distance title
 	- [ ] Card with mini address
 	- [ ] Description for the card
-	- [ ] Chat button
+	- [ ] Chat (Info dumper) button
 	- [ ] Map button
+- [ ] Info Dumper area
+	- [ ] Header
+		- [ ] Go Back
+		- [ ] Title
+		- [ ] Open in maps
+	- [ ] Message box
+	- [ ] Receiving Message
+	- [ ] Sending message
 
 ---
 
