@@ -26,7 +26,7 @@ class VolunteerHome extends StatelessWidget {
             distanceTitle: "Between 10-15 Km",
           ),
           SizedBox(height: 5, width: double.infinity), //Spacer
-          
+
           // Beyond 15km
           VolunteerHomeLayout(
             distanceTitle: "Beyond 15 Km",
@@ -69,14 +69,14 @@ class VolunteerHomeLayout extends StatelessWidget {
           child: Row(
             children: [
               VHLCard(
-                cardColor: Colors.red,
-                disasterTitle: "HI",
-                disasterDescription: "hi",
+                disasterTitle: "Flood In Bagru",
+                disasterDescription:
+                    "Flutter is an open-source UI software development kit created by Google. It can be used to develop crossplatform.",
               ),
               VHLCard(
-                cardColor: Colors.blue,
-                disasterTitle: "HI",
-                disasterDescription: "hsi",
+                disasterTitle: "Flood In Bagru",
+                disasterDescription:
+                    "Flutter is an open-source UI software development kit created by Google. It can be used to develop crossplatform.",
               ),
             ],
           ),
@@ -88,13 +88,11 @@ class VolunteerHomeLayout extends StatelessWidget {
 
 // Card
 class VHLCard extends StatelessWidget {
-  final Color cardColor;
   final String disasterTitle;
   final String disasterDescription;
 
   const VHLCard({
     super.key,
-    required this.cardColor,
     required this.disasterTitle,
     required this.disasterDescription,
   });
@@ -102,20 +100,77 @@ class VHLCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        margin: const EdgeInsets.only(left: 15, right: 15),
-        color: cardColor,
-        child: SizedBox(
-          height: 150,
-          width: 250,
+      margin: const EdgeInsets.only(left: 15, right: 15),
+      color: Colors.redAccent,
+      child: SizedBox(
+        height: 180,
+        width: 300,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              // Spacer
+              const Spacer(),
+
+              // Title & description
               ListTile(
-                title: Text(disasterTitle),
-                subtitle: Text(disasterDescription),
-              )
+                contentPadding: EdgeInsetsDirectional.zero,
+                title: Text(
+                  disasterTitle,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                subtitle: Text(
+                  disasterDescription,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+
+              // Spacer
+              const Spacer(),
+
+              // Buttons
+              Row(
+                children: [
+                  const Spacer(), // Spacer
+
+                  // Chats
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.lightBlueAccent),
+                    child: const Text(
+                      "Chat",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+
+                  const Spacer(), // Spacer
+
+                  // Maps
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.lightBlueAccent),
+                    child: const Text(
+                      "Maps",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+
+                  const Spacer(), // Spacer
+                ],
+              ),
+
+              // Spacer
+              const Spacer(),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
