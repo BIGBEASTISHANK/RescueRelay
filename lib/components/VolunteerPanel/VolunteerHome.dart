@@ -59,7 +59,11 @@ class VolunteerHomeLayout extends StatelessWidget {
           padding: const EdgeInsets.only(left: 15, top: 15, bottom: 10),
           child: Text(
             distanceTitle,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
         ),
 
@@ -101,73 +105,80 @@ class VHLCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(left: 15, right: 15),
-      color: Colors.redAccent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+        side: const BorderSide(color: Color(0XFF0088CC), width: 2),
+      ),
+      color: const Color(0XFF0A0C0E),
       child: SizedBox(
         height: 180,
         width: 300,
         child: Padding(
-          padding: const EdgeInsets.only(left: 10, right: 10),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Spacer
-              const Spacer(),
-
-              // Title & description
-              ListTile(
-                contentPadding: EdgeInsetsDirectional.zero,
-                title: Text(
-                  disasterTitle,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                subtitle: Text(
-                  disasterDescription,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-
-              // Spacer
-              const Spacer(),
-
-              // Buttons
-              Row(
-                children: [
-                  const Spacer(), // Spacer
-
-                  // Chats
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.lightBlueAccent),
-                    child: const Text(
-                      "Chat",
-                      style: TextStyle(color: Colors.black),
+          padding: const EdgeInsets.all(6),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Spacer
+                const Spacer(),
+          
+                // Title & description
+                ListTile(
+                  contentPadding: EdgeInsetsDirectional.zero,
+                  title: Text(
+                    disasterTitle,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-
-                  const Spacer(), // Spacer
-
-                  // Maps
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.lightBlueAccent),
-                    child: const Text(
-                      "Maps",
-                      style: TextStyle(color: Colors.black),
-                    ),
+                  subtitle: Text(
+                    disasterDescription,
+                    style: const TextStyle(color: Colors.white),
                   ),
-
-                  const Spacer(), // Spacer
-                ],
-              ),
-
-              // Spacer
-              const Spacer(),
-            ],
+                ),
+          
+                // Spacer
+                const Spacer(),
+          
+                // Buttons
+                Row(
+                  children: [
+                    const Spacer(), // Spacer
+          
+                    // Chats
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent),
+                      child: const Text(
+                        "Chat",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+          
+                    const Spacer(), // Spacer
+          
+                    // Maps
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.lightBlueAccent),
+                      child: const Text(
+                        "Maps",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+          
+                    const Spacer(), // Spacer
+                  ],
+                ),
+          
+                // Spacer
+                const Spacer(),
+              ],
+            ),
           ),
         ),
       ),

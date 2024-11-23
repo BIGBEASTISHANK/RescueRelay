@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // Basic Formatting
         title: const Text("Rescue Relay"),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: const Color(0XFF0088CC),
 
         // Menu button
         leading: Builder(builder: (context) {
@@ -44,6 +44,11 @@ class MyApp extends StatelessWidget {
 
       // Drawer
       drawer: const SideBar(),
+
+      // Styling
+      backgroundColor: const Color(0XFF1A1E23),
+
+      // Main body
       body: accountType == accountTypes.hosts ? const Placeholder() : const VolunteerHome(),
     ));
   }
