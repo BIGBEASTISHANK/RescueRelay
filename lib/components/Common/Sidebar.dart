@@ -15,11 +15,13 @@ class SideBar extends StatelessWidget {
               margin: EdgeInsets.zero,
               padding: EdgeInsets.only(left: 15),
               decoration: BoxDecoration(
-                  color: Color(0XFF0088CC),
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/blurDisaster.jpg"),
-                    fit: BoxFit.fill,
-                  )),
+                color: Color(0XFF0088CC),
+                image: DecorationImage(
+                  image: AssetImage("assets/img/blurDisaster.jpg"),
+                  fit: BoxFit.fill,
+                ),
+              ),
+
               // Title of the app
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

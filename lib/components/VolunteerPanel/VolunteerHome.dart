@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rescuerelay/data/data.dart';
 
 // Home Page
 class VolunteerHome extends StatelessWidget {
@@ -11,29 +12,27 @@ class VolunteerHome extends StatelessWidget {
         children: [
           // Near you 0-5
           VolunteerHomeLayout(
-            distanceTitle: "Near You (0-5Km)",
+            currentDisasterDistance: disasterDistance.zeroToFive,
           ),
           SizedBox(height: 5, width: double.infinity), // Spacer
 
           // Between 5-10
           VolunteerHomeLayout(
-            distanceTitle: "Between 5-10 Km",
+            currentDisasterDistance: disasterDistance.fiveToTen,
           ),
           SizedBox(height: 5, width: double.infinity), // Spacer
 
           // Between 10-15
           VolunteerHomeLayout(
-            distanceTitle: "Between 10-15 Km",
+            currentDisasterDistance: disasterDistance.tenToFifteen,
           ),
           SizedBox(height: 5, width: double.infinity), //Spacer
 
           // Beyond 15km
           VolunteerHomeLayout(
-            distanceTitle: "Beyond 15 Km",
+            currentDisasterDistance: disasterDistance.beyondFifteen,
           ),
-
-          // Spacer
-          SizedBox(height: 20, width: double.infinity),
+          SizedBox(height: 20, width: double.infinity), // Spacer
         ],
       ),
     );
@@ -42,20 +41,54 @@ class VolunteerHome extends StatelessWidget {
 
 // layout
 class VolunteerHomeLayout extends StatelessWidget {
-  final String distanceTitle;
+  final disasterDistance currentDisasterDistance;
 
   const VolunteerHomeLayout({
     super.key,
-    required this.distanceTitle,
+    required this.currentDisasterDistance,
   });
+
+  Map<String, Map<String, String>> getDataForDistance() {
+    switch (currentDisasterDistance) {
+      case disasterDistance.zeroToFive:
+        return DisasterData.zeroToFiveData;
+      case disasterDistance.fiveToTen:
+        return DisasterData.fiveToTenData;
+      case disasterDistance.tenToFifteen:
+        return DisasterData.tenToFifteenData;
+      case disasterDistance.beyondFifteen:
+        return DisasterData.beyondFifteenData;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    // Variable
+    String ?distanceTitle;
+    final data = getDataForDistance();
+
+    switch (currentDisasterDistance) {
+      case disasterDistance.zeroToFive:
+        distanceTitle = "Near You (0-5Km)";
+        break;
+      case disasterDistance.fiveToTen:
+        distanceTitle = "Between 5-10 Km";
+        break;
+      case disasterDistance.tenToFifteen:
+        distanceTitle = "Between 10-15 Km";
+        break;
+      case disasterDistance.beyondFifteen:
+        distanceTitle = "Beyond 15 Km";
+        break;
+    }
+
+    // Return widget
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Distance title
-        Padding(
+        Container(
+          alignment: Alignment.centerLeft,
           padding: const EdgeInsets.only(left: 15, top: 15, bottom: 10),
           child: Text(
             distanceTitle,
@@ -68,21 +101,15 @@ class VolunteerHomeLayout extends StatelessWidget {
         ),
 
         // Disaster card
-        const SingleChildScrollView(
+        SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: [
-              VHLCard(
-                disasterTitle: "Flood In Bagru",
-                disasterDescription:
-                    "Flutter is an open-source UI software development kit created by Google. It can be used to develop crossplatform.",
-              ),
-              VHLCard(
-                disasterTitle: "Flood In Bagru",
-                disasterDescription:
-                    "Flutter is an open-source UI software development kit created by Google. It can be used to develop crossplatform.",
-              ),
-            ],
+            children: data.entries.map((data) {
+              return VHLCard(
+                disasterTitle: data.value['title'] ?? '',
+                disasterDescription: data.value['description'] ?? '',
+              );
+            }).toList(),
           ),
         )
       ],
@@ -114,71 +141,62 @@ class VHLCard extends StatelessWidget {
         height: 180,
         width: 300,
         child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Spacer
-                const Spacer(),
-          
-                // Title & description
-                ListTile(
-                  contentPadding: EdgeInsetsDirectional.zero,
-                  title: Text(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Title & description
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
                     disasterTitle,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
+                      fontSize: 16,
                     ),
                   ),
-                  subtitle: Text(
+                  const SizedBox(height: 8),
+                  Text(
                     disasterDescription,
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-          
-                // Spacer
-                const Spacer(),
-          
-                // Buttons
-                Row(
-                  children: [
-                    const Spacer(), // Spacer
-          
-                    // Chats
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent),
-                      child: const Text(
-                        "Chat",
-                        style: TextStyle(color: Colors.black),
-                      ),
+                ],
+              ),
+
+              // Buttons row at bottom
+              Row(
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlueAccent,
                     ),
-          
-                    const Spacer(), // Spacer
-          
-                    // Maps
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightBlueAccent),
-                      child: const Text(
-                        "Maps",
-                        style: TextStyle(color: Colors.black),
-                      ),
+                    child: const Text(
+                      "Chat",
+                      style: TextStyle(color: Colors.black),
                     ),
-          
-                    const Spacer(), // Spacer
-                  ],
-                ),
-          
-                // Spacer
-                const Spacer(),
-              ],
-            ),
+                  ),
+                  const Spacer(),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlueAccent,
+                    ),
+                    child: const Text(
+                      "Maps",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+            ],
           ),
         ),
       ),

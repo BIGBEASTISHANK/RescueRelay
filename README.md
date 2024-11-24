@@ -27,12 +27,12 @@
 	- [x] Appbar
 	- [x] Side menu slider
 	- [x] Menu list
-- [ ] Home page
-	- [ ] Distance title
-	- [ ] Card with mini address
-	- [ ] Description for the card
-	- [ ] Chat (Info dumper) button
-	- [ ] Map button
+- [x] Home page
+	- [x] Distance title
+	- [x] Card with mini address
+	- [x] Description for the card
+	- [x] Chat (Info dumper) button
+	- [x] Map button
 - [ ] Info Dumper area
 	- [ ] Header
 		- [ ] Go Back

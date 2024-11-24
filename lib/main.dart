@@ -10,11 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
-  // Variables
-  accountTypes accountType = accountTypes.volunteer;
-    
-    // Main part
+
+    // Material Apps
     return MaterialApp(
         home: Scaffold(
       // Appbar
@@ -25,18 +22,20 @@ class MyApp extends StatelessWidget {
         backgroundColor: const Color(0XFF0088CC),
 
         // Menu button
-        leading: Builder(builder: (context) {
-          return IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: const Icon(Icons.menu));
-        }),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.menu));
+          },
+        ),
 
         // Other Action Button
         actions: [
           IconButton(
-            onPressed: (){},
+            onPressed: () {},
             icon: const Icon(Icons.search),
           )
         ],
@@ -49,7 +48,9 @@ class MyApp extends StatelessWidget {
       backgroundColor: const Color(0XFF1A1E23),
 
       // Main body
-      body: accountType == accountTypes.hosts ? const Placeholder() : const VolunteerHome(),
+      body: currentAccountType == accountTypes.hosts
+          ? const Placeholder()
+          : const VolunteerHome(),
     ));
   }
 }
