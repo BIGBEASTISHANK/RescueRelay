@@ -50,3 +50,7 @@
 
 ### New Team
 [Devguru Pandey](https://github.com/DevguruPandey) / [Harsh Gandash](https://github.com/HarshGandash) / [Samichha Singh](https://github.com/Samichha13) / [Mahak Dewangan](https://github.com/MahakDewangan)
+
+## Dates
+- Development started on: 1 Nov 2024
+- Development Paused on: 24 Nov 2024
