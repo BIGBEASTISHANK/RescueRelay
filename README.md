@@ -44,12 +44,8 @@
 
 ---
 
-## Credit
-### Old Team
-[HB Singh Choudhary](https://github.com/hbsinghchoudhary) / [Angad Singh](https://github.com/RealAngadSingh)
-
-### New Team
-[Devguru Pandey](https://github.com/DevguruPandey) / [Harsh Gandash](https://github.com/HarshGandash) / [Samichha Singh](https://github.com/Samichha13) / [Mahak Dewangan](https://github.com/MahakDewangan)
+## Idea Credit
+[Hiten Balara Singh Choudhary](https://github.com/hbsinghchoudhary) / [Devguru Pandey](https://github.com/DevguruPandey)
 
 ---
 
