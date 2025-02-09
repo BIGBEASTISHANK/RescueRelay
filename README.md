@@ -1,10 +1,6 @@
 # Rescue Relay
 
-## Short Description
-- It's an open-source, crowdsourced software for catastrophe reporting where local residents can share information when emergency services publish disasters. Following analysis of data, our app will advise the departments on the best course of action.
-
-> [!Note]
-> Project specification will be updated here shortly.
+The purpose of Rescue Relay is to facilitate rapid coordination and efficient response during emergencies, such as road mishaps or natural disasters. By enabling emergency services to receive real-time information and updates, and involving nearby residents and commuters, the platform optimises rescue operations and reduces chaos at the incident site. The software ensures emergency services can act quickly while civilians are kept informed, promoting safety and awareness.
 ---
 
 ## Credit
